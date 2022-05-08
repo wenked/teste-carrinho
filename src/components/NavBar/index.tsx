@@ -23,18 +23,24 @@ const NavBar: React.FC<NavProps> = ({
 			<NavItem onClick={handleOpenCart}>Carrinho Normal</NavItem>
 			<NavItem
 				onClick={() => {
-					setAcima(false);
-					setIsOpen(!isOpen);
 					setOpenNormalCart(false);
+					if (isOpen && acima) {
+						setAcima(false);
+					} else {
+						setIsOpen(!isOpen);
+					}
 				}}
 			>
 				Abaixo de 10 reais
 			</NavItem>
 			<NavItem
 				onClick={() => {
-					setAcima(true);
-					setIsOpen(!isOpen);
 					setOpenNormalCart(false);
+					if (isOpen && !acima) {
+						setAcima(true);
+					} else {
+						setIsOpen(!isOpen);
+					}
 				}}
 			>
 				Acima de 10 reais

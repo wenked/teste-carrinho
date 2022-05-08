@@ -59,7 +59,7 @@ const NormalCart: React.FC<CartProps> = ({ total, isOpen, myCart, setCart, setTo
 
 				<Total>
 					<span>Total</span>
-					<p>{CurrencyFormatter(total)}</p>
+					<p>{CurrencyFormatter(total * 1)}</p>
 				</Total>
 				{total > 10 && (
 					<FreteGratis>
