@@ -17,19 +17,52 @@ interface mockApiResponse {
 	}[];
 }
 
-const useMockApi = (acima: boolean): [mockApiResponse, number] => {
-	const [items, setItems] = useState<mockApiResponse>(acima10reais);
+export interface mockListApiResponse {
+	value: number;
+	items: {
+		uniqueId: string;
+		id: string;
+		productId: string;
+		name: string;
+		skuName: string;
+		price: number;
+		listPrice: number;
+		imageUrl: string;
+		sellingPrice: number;
+		count: number;
+		total: number;
+	}[];
+}
+
+const useMockApi = (
+	acima: boolean,
+	mockList: boolean
+): [mockApiResponse | mockListApiResponse, number] => {
+	const [items, setItems] = useState<mockApiResponse | mockListApiResponse>(acima10reais);
 	const [total, setTotal] = useState(0);
 
 	useEffect(() => {
-		if (acima) {
-			setTotal(acima10reais.items.reduce((acc, item) => acc + item.sellingPrice / 100, 0));
-			setItems(acima10reais as mockApiResponse);
+		if (mockList) {
+			const formatedItems = {
+				...acima10reais,
+				items: acima10reais.items.map((item: any) => ({
+					...item,
+					count: 1,
+					total: item.sellingPrice,
+				})),
+			};
+
+			setItems(formatedItems);
 		} else {
-			setTotal(abaixo10reais.items.reduce((acc, item) => acc + item.sellingPrice / 100, 0));
-			setItems(abaixo10reais as mockApiResponse);
+			if (acima) {
+				setTotal(acima10reais.items.reduce((acc, item) => acc + item.sellingPrice / 100, 0));
+				setItems(acima10reais as mockApiResponse);
+			} else {
+				setTotal(abaixo10reais.items.reduce((acc, item) => acc + item.sellingPrice / 100, 0));
+				setItems(abaixo10reais as mockApiResponse);
+			}
 		}
-	}, [acima]);
+	}, [acima, mockList]);
 
 	return [items, total];
 };

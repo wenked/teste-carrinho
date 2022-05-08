@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 
 interface ContainerProps {
 	isOpen: boolean;
-	acima: boolean;
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -12,7 +11,7 @@ export const Container = styled.div<ContainerProps>`
 	align-items: center;
 	position: absolute;
 	z-index: 1;
-	${({ isOpen, acima }) =>
+	${({ isOpen }) =>
 		isOpen
 			? css`
 					z-index: 99;
@@ -23,13 +22,7 @@ export const Container = styled.div<ContainerProps>`
 					height: 800px;
 					border-radius: 20px;
 					box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-					${acima
-						? css`
-								right: 10px;
-						  `
-						: css`
-								right: 100px;
-						  `}
+					right: 150px;
 			  `
 			: css`
 					display: none;

@@ -42,3 +42,11 @@ export const Content = styled.div`
 		color: black;
 	}
 `;
+
+export const RemoveButton = styled.button`
+	width: 70px;
+	padding: 5px;
+	border: none;
+	cursor: pointer;
+	margin-top: 10px;
+`;

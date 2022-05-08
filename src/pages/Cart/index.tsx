@@ -22,7 +22,7 @@ interface CartProps {
 }
 
 const Cart: React.FC<CartProps> = ({ acima, isOpen }) => {
-	const [items, total] = useMockApi(acima);
+	const [items, total] = useMockApi(acima, false);
 
 	return (
 		<Container isOpen={isOpen} acima={acima}>

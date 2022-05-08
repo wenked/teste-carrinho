@@ -6,15 +6,26 @@ interface NavProps {
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 	acima: boolean;
 	setAcima: React.Dispatch<React.SetStateAction<boolean>>;
+	handleOpenCart: () => void;
+	setOpenNormalCart: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const NavBar: React.FC<NavProps> = ({ isOpen, setAcima, setIsOpen, acima }) => {
+const NavBar: React.FC<NavProps> = ({
+	setOpenNormalCart,
+	handleOpenCart,
+	isOpen,
+	setAcima,
+	setIsOpen,
+	acima,
+}) => {
 	return (
 		<Container>
+			<NavItem onClick={handleOpenCart}>Carrinho Normal</NavItem>
 			<NavItem
 				onClick={() => {
 					setAcima(false);
 					setIsOpen(!isOpen);
+					setOpenNormalCart(false);
 				}}
 			>
 				Abaixo de 10 reais
@@ -23,6 +34,7 @@ const NavBar: React.FC<NavProps> = ({ isOpen, setAcima, setIsOpen, acima }) => {
 				onClick={() => {
 					setAcima(true);
 					setIsOpen(!isOpen);
+					setOpenNormalCart(false);
 				}}
 			>
 				Acima de 10 reais
