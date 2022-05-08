@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import abaixo10reais from "../../mockdata/abaixo-10-reais.json";
 import acima10reais from "../../mockdata/acima-10-reais.json";
-import Item from "../../components/Item";
+import Item from "../Item";
 import {
 	Container,
 	Title,
@@ -15,7 +15,7 @@ import {
 } from "./styles";
 import CurrencyFormatter from "../../utils/formatter";
 
-import { CartItem } from "../Home";
+import { CartItem } from "../../pages/Home";
 
 interface CartProps {
 	isOpen: boolean;

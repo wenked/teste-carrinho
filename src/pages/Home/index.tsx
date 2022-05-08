@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Cart from "../Cart";
+import Cart from "../../components/Cart";
 
 import NavBar from "../../components/NavBar";
 import useMockApi, { mockListApiResponse } from "../../hooks/useMockApi";
 import DisplayItem from "../../components/DisplayItem";
 import { ItemContainer } from "./styles";
-import NormalCart from "../NormalCart";
+import NormalCart from "../../components/NormalCart";
 
 export interface CartItem {
 	uniqueId: string;
@@ -35,7 +35,7 @@ const Home: React.FC = () => {
 	};
 
 	return (
-		<div>
+		<>
 			<NavBar
 				handleOpenCart={handleOpenCart}
 				isOpen={isOpen}
@@ -65,7 +65,7 @@ const Home: React.FC = () => {
 					);
 				})}
 			</ItemContainer>
-		</div>
+		</>
 	);
 };
 

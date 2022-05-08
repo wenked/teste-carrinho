@@ -12,6 +12,7 @@ export const Container = styled.div<ContainerProps>`
 	align-items: center;
 	position: absolute;
 	z-index: 1;
+	background: white;
 	${({ isOpen, acima }) =>
 		isOpen
 			? css`

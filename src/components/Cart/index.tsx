@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import abaixo10reais from "../../mockdata/abaixo-10-reais.json";
 import acima10reais from "../../mockdata/acima-10-reais.json";
-import Item from "../../components/Item";
+import Item from "../Item";
 import {
 	Container,
 	Title,
