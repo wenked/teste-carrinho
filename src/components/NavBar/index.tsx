@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, NavItem } from "./styles";
+import { FiShoppingCart } from "react-icons/fi";
 
 interface NavProps {
 	isOpen: boolean;
@@ -20,7 +21,10 @@ const NavBar: React.FC<NavProps> = ({
 }) => {
 	return (
 		<Container>
-			<NavItem onClick={handleOpenCart}>Carrinho Normal</NavItem>
+			<NavItem onClick={handleOpenCart}>
+				Carrinho Normal
+				<FiShoppingCart size={14} style={{ marginLeft: "5px" }} />
+			</NavItem>
 			<NavItem
 				onClick={() => {
 					setOpenNormalCart(false);

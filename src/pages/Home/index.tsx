@@ -2,24 +2,11 @@ import React, { useState } from "react";
 import Cart from "../../components/Cart";
 
 import NavBar from "../../components/NavBar";
-import useMockApi, { mockListApiResponse } from "../../hooks/useMockApi";
+import useMockApi from "../../hooks/useMockApi";
 import DisplayItem from "../../components/DisplayItem";
 import { ItemContainer } from "./styles";
 import NormalCart from "../../components/NormalCart";
-
-export interface CartItem {
-	uniqueId: string;
-	id: string;
-	productId: string;
-	name: string;
-	skuName: string;
-	price: number;
-	listPrice: number;
-	imageUrl: string;
-	sellingPrice: number;
-	count: number;
-	total: number;
-}
+import { CartItem } from "../../types";
 
 const Home: React.FC = () => {
 	const [isOpen, setIsOpen] = useState(false);

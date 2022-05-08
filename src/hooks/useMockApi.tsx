@@ -1,38 +1,7 @@
 import React, { useState, useEffect } from "react";
 import acima10reais from "../mockdata/acima-10-reais.json";
 import abaixo10reais from "../mockdata/abaixo-10-reais.json";
-
-interface mockApiResponse {
-	value: number;
-	items: {
-		uniqueId: string;
-		id: string;
-		productId: string;
-		name: string;
-		skuName: string;
-		price: number;
-		listPrice: number;
-		imageUrl: string;
-		sellingPrice: number;
-	}[];
-}
-
-export interface mockListApiResponse {
-	value: number;
-	items: {
-		uniqueId: string;
-		id: string;
-		productId: string;
-		name: string;
-		skuName: string;
-		price: number;
-		listPrice: number;
-		imageUrl: string;
-		sellingPrice: number;
-		count: number;
-		total: number;
-	}[];
-}
+import { mockApiResponse, mockListApiResponse } from "../types";
 
 const useMockApi = (
 	acima: boolean,

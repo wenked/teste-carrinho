@@ -1,8 +1,8 @@
 import React from "react";
 import { Container, Image, Price, Title, AddCartButton, ButtonContainer } from "./styles";
 import CurrencyFormatter from "../../utils/formatter";
-import { mockListApiResponse } from "../../hooks/useMockApi";
-import { CartItem } from "../../pages/Home";
+
+import { CartItem } from "../../types";
 
 interface DisplayItemProps {
 	item: CartItem;
